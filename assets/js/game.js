@@ -1,1 +1,5 @@
-window.alert("this is an alert");
+function fight() {
+    window.alert("this fight has begun");
+}
+
+fight();
