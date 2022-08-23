@@ -14,14 +14,21 @@ enemyHealth = enemyHealth - playerAttack;
 console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.")
 playerHealth=  playerHealth - enemyAttack;
   console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.")
-};
+  if ( enemyHealth <= 0){
+      window.alert("GREAT ENEMY FELLED")
+  }
+  else {
+      window.alert(enemyName + " still has " + enemyHealth)
+  };
 
-if ( enemyHealth <= 0){
-    window.alert("Great Enemy Felled")
+  if ( playerHealth <= 0){
+    window.alert("YOU DIED")
 }
 else {
-    window.alert(enemyName + " still has " + enemyHealth)
-}
+    window.alert(playerName + " still has " + playerHealth)
+};
+};
+
 
 console.log("our hero's name is " + playerName);
 
