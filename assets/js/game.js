@@ -8,10 +8,21 @@ var enemyName = "Morgot";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-function fight() {
+var fight = function() {
     window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
+enemyHealth = enemyHealth - playerAttack;
+console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.")
+playerHealth=  playerHealth - enemyAttack;
+  console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.")
+};
+
+if ( enemyHealth <= 0){
+    window.alert("Great Enemy Felled")
+}
+else {
+    window.alert(enemyName + " still has " + enemyHealth)
 }
 
-console.log("our robot's name is " + playerName);
+console.log("our hero's name is " + playerName);
 
-// fight();
+fight();
