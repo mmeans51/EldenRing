@@ -1,27 +1,21 @@
-var playerName = window.prompt("what is ye name tarnished?;");
-window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 1500;
 
-console.log(playerName, playerAttack, playerHealth);
-
 var enemyName = [
-  "Margit, the Fell Omen",
-  "Starscourge Radahn",
-  "Dragonlord Placidusax",
+    "Margit, the Fell Omen",
+    "Starscourge Radahn",
+    "Dragonlord Placidusax",
 ];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log("our hero's name is " + playerName);
 
-for(var i = 0; i < enemyName.length; i++) {
-    console.log(enemyName[i]);
-    console.log(i);
-    console.log(enemyName[i] + " is at " + i + " index");
-  }
-var fight = function () {
+var playerName = window.prompt("what is ye name tarnished?;");
+window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
+
+
+var fight = function (enemyName) {
   var promptFight = window.prompt("Does the tarnish wish to flee or fight?");
   if (promptFight === "fight" || promptFight === "FIGHT") {
     enemyHealth = enemyHealth - playerAttack;
@@ -74,4 +68,7 @@ var fight = function () {
     window.alert("Tarnished must FIGHT or FLEE!");
   }
 };
-// fight();
+
+for(var i = 0; i < enemyName.length; i++) {
+    fight(enemyName[i]);
+}
