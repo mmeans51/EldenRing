@@ -18,29 +18,30 @@ var fight = function() {
     if (promptFight === "fight" || promptFight === "FIGHT") {
         enemyHealth = enemyHealth - playerAttack;
         console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.")
-
+        window.alert(playerName + " hit " + enemyName  + ".     -" + playerAttack)
         if ( enemyHealth <= 0){
             window.alert("GREAT ENEMY FELLED")
         }
         else {
-            window.alert(enemyName + " still has " + enemyHealth + " HP left")
+            window.alert(enemyName + "  has " + enemyHealth + "HP left")
         };
 
         playerHealth=  playerHealth - enemyAttack;
-          console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.")
+        window.alert(enemyName + " hits " + playerName + ".     -" + enemyAttack)
+          console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + "HP remaining.")
 
   if ( playerHealth <= 0){
     window.alert("YOU DIED")
 }
 else {
-    window.alert(playerName + " still has " + playerHealth + " HP left");
+    window.alert(playerName + "  has " + playerHealth + " HP left");
 }
 
 
 }else if (promptFight === "flee" || promptFight === "FLEE") {
-    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    var confirmSkip = window.confirm("You will lose 200 ruins for leaving. Are you sure you'd like to quit?");
     if (confirmSkip) {
-        window.alert(playerName + "has has to flee.");
+        window.alert(playerName + "has has fled.     -200");
         playerMoney = playerMoney - 200;
     }
     else {
