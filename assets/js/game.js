@@ -2,6 +2,7 @@ var playerName = window.prompt("what is ye name tarnished?;")
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 var playerHealth = 100;
 var playerAttack = 10;
+var playerMoney = 1500;
 
 console.log(playerName, playerAttack, playerHealth);
 
@@ -37,7 +38,14 @@ else {
 
 
 }else if (promptFight === "flee" || promptFight === "FLEE") {
-    window.alert(playerName + "has chosen to flee");
+    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    if (confirmSkip) {
+        window.alert(playerName + "has has to flee.");
+        playerMoney = playerMoney - 200;
+    }
+    else {
+        fight();
+    }
 } else {
     window.alert("Tarnished must FIGHT or FLEE!")
 }
