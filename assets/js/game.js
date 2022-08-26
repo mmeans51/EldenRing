@@ -16,6 +16,7 @@ window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 
 
 var fight = function (enemyName) {
+  while(enemyHealth) {
   var promptFight = window.prompt("Does the tarnish wish to flee or fight?");
   if (promptFight === "fight" || promptFight === "FIGHT") {
     enemyHealth = enemyHealth - playerAttack;
@@ -67,6 +68,7 @@ var fight = function (enemyName) {
   } else {
     window.alert("Tarnished must FIGHT or FLEE!");
   }
+}
 };
 
 for(var i = 0; i < enemyName.length; i++) {
