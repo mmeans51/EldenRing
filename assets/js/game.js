@@ -14,9 +14,10 @@ var playerName = window.prompt("what is ye name tarnished?;");
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 
 var fight = function (enemyName) {
+  window.prompt("An enemy approaches from the darkness. ")
   while (playerHealth > 0 && enemyHealth > 0) {
   //fight or flee
-  var promptFight = window.prompt("An enemy approaches from the darkness. Doth the tarnish wish to flee or fight?  (spam ok to speed through fight)");
+  var promptFight = window.prompt("Doth the tarnish wish to flee or fight?  (spam ok to speed through fight)");
 
   //if player skips
   if (promptFight === "flee" || promptFight === "FLEE") {
@@ -48,6 +49,8 @@ var fight = function (enemyName) {
       window.alert(playerName + " hit " + enemyName + ".     -" + playerAttack);
       if (enemyHealth <= 0) {
         window.alert("GREAT ENEMY FELLED");
+        playerMoney = playerMoney + 500;
+        window.alert("+ 500 ruins");
         break;
       } else {
         window.alert(enemyName + "  has " + enemyHealth + "HP left");
@@ -95,9 +98,9 @@ for (var i = 0; i < enemyName.length; i++) {
     window.alert("YOU DIED");
     break;
   }
-  endGame();
 }
-startGame();
+// startGame();
+endGame();
 };
 
 var endGame = function() {
