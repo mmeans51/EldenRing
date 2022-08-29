@@ -77,6 +77,15 @@ var fight = function (enemyName) {
 };
 
 for (var i = 0; i < enemyName.length; i++) {
+  if (playerHealth > 0) {
+    window.alert("Try fingers! Butthole? Attempt #" + (i + 1));
+
+    var pickedEnemyName = enemyName[i];
+
+    enemyHealth = 50;
+    fight(pickedEnemyName);
+  }
+
   var pickedEnemyName = enemyName[i];
   enemyHealth = 50;
   fight(pickedEnemyName);
