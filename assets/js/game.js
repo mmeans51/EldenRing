@@ -14,7 +14,7 @@ var playerName = window.prompt("what is ye name tarnished?;");
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 
 var fight = function (enemyName) {
-  window.prompt("An enemy approaches from the darkness. ")
+  window.alert("An enemy approaches from the darkness. ")
   while (playerHealth > 0 && enemyHealth > 0) {
   //fight or flee
   var promptFight = window.prompt("Doth the tarnish wish to flee or fight?  (spam ok to speed through fight)");
