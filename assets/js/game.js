@@ -97,7 +97,7 @@ for (var i = 0; i < enemyName.length; i++) {
   }
   endGame();
 }
-// startGame();
+startGame();
 };
 
 var endGame = function() {
