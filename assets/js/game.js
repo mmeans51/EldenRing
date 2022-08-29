@@ -14,9 +14,26 @@ var playerName = window.prompt("what is ye name tarnished?;");
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 
 var fight = function (enemyName) {
+  while (playerHealth > 0 && enemyHealth > 0) {
+  //fight or flee
   var promptFight = window.prompt("Does the tarnish wish to flee or fight?");
-  if (promptFight === "fight" || promptFight === "FIGHT") {
-    while (playerHealth > 0 && enemyHealth > 0) {
+
+  //if player skips
+  if (promptFight === "flee" || promptFight === "FLEE") {
+    // confirm player wants to skip
+    var confirmSkip = window.confirm("Are you sure you'd like to flee?");
+
+    // if yes (true), leave fight
+    if (confirmSkip) {
+      window.alert(playerName + ' has decided to flee. -200');
+      // subtract money from playerMoney for skipping
+      playerMoney = playerMoney - 10;
+      console.log("playerMoney", playerMoney)
+      break;
+    }
+  }
+
+  //remove enemy's health
       enemyHealth = enemyHealth - playerAttack;
       console.log(
         playerName +
@@ -35,7 +52,7 @@ var fight = function (enemyName) {
       } else {
         window.alert(enemyName + "  has " + enemyHealth + "HP left");
       }
-
+      //remove player health
       playerHealth = playerHealth - enemyAttack;
       window.alert(enemyName + " hits " + playerName + ".     -" + enemyAttack);
       console.log(
@@ -49,31 +66,18 @@ var fight = function (enemyName) {
           "HP remaining."
       );
 
+      //check player health
       if (playerHealth <= 0) {
-        window.alert("YOU DIED");
+        window.alert(" YOU DIED ");
         break;
       } else {
-        window.alert(playerName + "  has " + playerHealth + " HP left");
+        window.alert(playerName + " has " + playerHealth + ' hp left');
       }
-    }
-  } else if (promptFight === "flee" || promptFight === "FLEE") {
-    var confirmSkip = window.confirm(
-      "You will lose 200 ruins for leaving. Are you sure you'd like to quit?"
-    );
-    if (confirmSkip) {
-      window.alert(playerName + "has has fled.     -200");
-      playerMoney = playerMoney - 200;
-      console.log("playerMoney", playerMoney);
-    } else {
-      fight();
-    }
-  } else {
-    window.alert("Tarnished must FIGHT or FLEE!");
-  }
+}
 };
 
 for (var i = 0; i < enemyName.length; i++) {
   var pickedEnemyName = enemyName[i];
   enemyHealth = 50;
   fight(pickedEnemyName);
-}
+};
