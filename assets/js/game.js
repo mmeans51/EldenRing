@@ -16,12 +16,12 @@ window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
 var fight = function (enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
   //fight or flee
-  var promptFight = window.prompt("Does the tarnish wish to flee or fight?");
+  var promptFight = window.prompt("An enemy approaches from the darkness. Doth the tarnish wish to flee or fight?  (spam ok to speed through fight)");
 
   //if player skips
   if (promptFight === "flee" || promptFight === "FLEE") {
     // confirm player wants to skip
-    var confirmSkip = window.confirm("Are you sure you'd like to flee?");
+    var confirmSkip = window.confirm("Are you sure you would like to flee?");
 
     // if yes (true), leave fight
     if (confirmSkip) {
@@ -76,17 +76,46 @@ var fight = function (enemyName) {
 }
 };
 
+//start new game
+var startGame = function() {
+  var playerHealth = 100;
+  var playerAttack = 10;
+  var playerMoney = 1500;
+
 for (var i = 0; i < enemyName.length; i++) {
   if (playerHealth > 0) {
-    window.alert("Try fingers! Butthole? Attempt #" + (i + 1));
+    window.alert("Try fingers! But whole? Attempt #" + (i + 1));
 
     var pickedEnemyName = enemyName[i];
 
     enemyHealth = 50;
     fight(pickedEnemyName);
   }
-
-  var pickedEnemyName = enemyName[i];
-  enemyHealth = 50;
-  fight(pickedEnemyName);
+  else {
+    window.alert("YOU DIED");
+    break;
+  }
+  endGame();
+}
+// startGame();
 };
+
+var endGame = function() {
+  if (playerHealth > 0) {
+    window.alert("You survived with " + playerMoney + " ruins");
+  }
+  else {
+    window.alert("GAME OVER")
+  }
+
+  var playAgainConfirm = window.confirm("Doth thou wish to be reborn?");
+
+  if (playAgainConfirm) {
+    startGame();
+  }
+  else {
+    window.alert("And this is why though wil remain..... maidenless!");
+  }
+};
+
+startGame();
