@@ -7,7 +7,7 @@ var enemyName = [
   "Starscourge Radahn",
   "Dragonlord Placidusax",
 ];
-var enemyHealth = 50;
+var enemyHealth = 10;
 var enemyAttack = 12;
 
 var playerName = window.prompt("what is ye name tarnished?;");
@@ -93,6 +93,10 @@ for (var i = 0; i < enemyName.length; i++) {
 
     enemyHealth = 50;
     fight(pickedEnemyName);
+    
+    if (playerHealth > 0 && i < enemyName.length - 1) {
+      shop();
+    }
   }
   else {
     window.alert("YOU DIED");
@@ -119,6 +123,10 @@ var endGame = function() {
   else {
     window.alert("And this is why though wil remain..... maidenless!");
   }
+};
+
+var shop = function() {
+  console.log("entered the shop");
 };
 
 startGame();
