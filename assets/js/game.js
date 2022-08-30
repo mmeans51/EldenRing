@@ -93,9 +93,13 @@ for (var i = 0; i < enemyName.length; i++) {
 
     enemyHealth = 50;
     fight(pickedEnemyName);
-    
+
     if (playerHealth > 0 && i < enemyName.length - 1) {
-      shop();
+      var storeConfirm = window.confirm("The battle is over. Doth thou wish to seek the merchant?");
+
+      if (storeConfirm) {
+        shop();
+      }
     }
   }
   else {
