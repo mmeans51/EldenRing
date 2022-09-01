@@ -5,7 +5,7 @@ var randomNumber = function(min, max) {
 };
 
 var playerHealth = 100;
-var playerAttack = 18;
+var playerAttack = 12;
 var playerMoney = 1500;
 
 var enemyName = [
@@ -13,8 +13,8 @@ var enemyName = [
   "Starscourge Radahn",
   "Dragonlord Placidusax",
 ];
-var enemyHealth = randomNumber(50, 70);
-var enemyAttack = randomNumber(20,30);
+var enemyHealth = randomNumber(50, 90);
+var enemyAttack = randomNumber(15,30);
 
 var playerName = window.prompt("what is ye name tarnished?;");
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
