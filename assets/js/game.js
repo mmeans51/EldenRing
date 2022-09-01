@@ -14,7 +14,7 @@ var enemyName = [
   "Dragonlord Placidusax",
 ];
 var enemyHealth = randomNumber(40, 60);
-var enemyAttack = randomNumber();
+var enemyAttack = randomNumber(10,25);
 
 var playerName = window.prompt("what is ye name tarnished?;");
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
