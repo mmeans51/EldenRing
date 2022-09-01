@@ -1,3 +1,9 @@
+var randomNumber = function(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return value;
+};
+
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 1500;
@@ -7,8 +13,8 @@ var enemyName = [
   "Starscourge Radahn",
   "Dragonlord Placidusax",
 ];
-var enemyHealth = 10;
-var enemyAttack = 12;
+var enemyHealth = randomNumber(40, 60);
+var enemyAttack = randomNumber();
 
 var playerName = window.prompt("what is ye name tarnished?;");
 window.alert("AAAGH... RISE NOW, YE TARNISHED! YE DEAD, WHO YET LIVE!");
@@ -37,7 +43,8 @@ var fight = function (enemyName) {
     }
 
     //remove enemy's health
-    enemyHealth = enemyHealth - playerAttack;
+    var damage = randomNumber(playerAttack - 3, playerAttack);
+    enemyHealth = Math.max(0, enemyHealth - damage);
     console.log(
       playerName +
         " attacked " +
@@ -58,7 +65,8 @@ var fight = function (enemyName) {
       window.alert(enemyName + "  has " + enemyHealth + "HP left");
     }
     //remove player health
-    playerHealth = playerHealth - enemyAttack;
+    var damage = randomNumber(enemyAttack - 3, enemyAttack);
+    playerHealth = Math.max(0, playerHealth - damage);
     window.alert(enemyName + " hits " + playerName + ".     -" + enemyAttack);
     console.log(
       enemyName +
@@ -93,7 +101,7 @@ var startGame = function () {
 
       var pickedEnemyName = enemyName[i];
 
-      enemyHealth = 50;
+      enemyHealth = Math.floor(Math.random() * 21) + 40;
       fight(pickedEnemyName);
 
       if (playerHealth > 0 && i < enemyName.length - 1) {
@@ -169,5 +177,7 @@ var shop = function () {
       break;
   }
 };
+
+
 
 startGame();
